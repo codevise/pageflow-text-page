@@ -23,6 +23,14 @@ pageflow.ConfigurationEditorView.register('text_page', {
       this.input('text_title', pageflow.TextInputView);
       this.input('text', pageflow.TextAreaInputView);
       this.input('invert_text', pageflow.CheckBoxInputView);
+      this.input('text_page_background_color', pageflow.ColorInputView, {
+        defaultValue: function(invertText) {
+          return invertText ? '#000000' : '#ffffff';
+        },
+        defaultValueBinding: 'invert_text',
+
+        swatches: usedBackgroundColors()
+      });
 
       this.input('text_image_id', pageflow.FileInputView, {
         collection: pageflow.imageFiles,
@@ -49,5 +57,11 @@ pageflow.ConfigurationEditorView.register('text_page', {
       });
       this.group('options');
     });
+
+    function usedBackgroundColors() {
+      return _.chain(pageflow.pages.map(function(page) {
+        return page.configuration.get('text_page_background_color');
+      })).uniq().compact().value();
+    }
   }
 });

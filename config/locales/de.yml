@@ -43,7 +43,6 @@ de:
           header: Titel
       inline_help:
         pageflow/page:
-          invert_text: Vertauscht Text- und Hintergrundfarbe im Fließtextbereich.
           prevent_fullscreen: Verhindert, dass das Fließtextbild bei Klick auf das Bild im Vollbild dargestellt wird.
           sticky_inline_image: Das Bild wird zunächst zusammen mit dem Text gescrollt, bleibt dann aber vertikal zentriert stehen, während der Text weiter scrollt.
           text: Dies ist der Bereich für den Fließtext dieser Seite. Dieser Seitentyp ist für lange Texte optimiert. Bei Kurztexten sollte auf andere Seitentypen zurückgegriffen werden.

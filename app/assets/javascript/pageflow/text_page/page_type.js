@@ -223,6 +223,10 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
     pageElement.find('.content_and_background').toggleClass('invert_text', !!configuration.get('invert_text'));
     pageElement.data('invertIndicator', !configuration.get('invert_text'));
 
+    pageElement.find('.content_background_layer').css({
+      backgroundColor: configuration.get('text_page_background_color') || ''
+    });
+
     pageElement.find('.shadow, .header_background_layer').css({
       opacity: configuration.get('gradient_opacity') / 100
     });

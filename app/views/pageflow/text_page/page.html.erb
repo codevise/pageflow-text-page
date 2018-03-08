@@ -20,7 +20,7 @@
       <div class="contentWrapper">
         <div class="page_spacer"></div>
         <div class="contentInnerWrapper">
-          <div class="content_background_layer"></div>
+          <div class="content_background_layer" style="<%= configuration['text_page_background_color'] ? "background-color: #{configuration['text_page_background_color']}" : '' %>"></div>
           <div class="page_header">
             <div class="header_background_layer" style="opacity: <%= configuration['gradient_opacity'].to_i / 100.0 %>"></div>
             <h2>

@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+      pageflow/page:
+        text_page_background_color: "Background color"
+  pageflow:
+    ui:
+      inline_help:
+        pageflow/page:
+          text_page_background_color: "Use the 'invert text area color' option to make sure there is sufficient contrast between text and selected background color."
+          invert_text: "Display white text on dark background."
