@@ -43,7 +43,6 @@ en:
           header: Title area
       inline_help:
         pageflow/page:
-          invert_text: Switches text and background colors
           prevent_fullscreen: Prevents the image from opening fullscreen on click
           sticky_inline_image: The image scrolls with the text but eventually remains at a vertically centered position.
           text: This is the main contents of the page. This page type is made for long texts. Use a different page type if your main content text is short.
