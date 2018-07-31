@@ -1,1 +1,31 @@
+/// Used to scale down text title and content text
+$text-page-content-text-base-font-size: 0.8em !default;
+
+/// Used to undo scaling of text title and content text on phone
+$text-page-content-text-phone-base-font-size: 1em !default;
+
+/// Typography of the header displayed above the content text
+/// paragraph.
+$text-page-text-title-typography: () !default;
+
 @include pageflow-page-type-pictograms("text_page");
+
+.page .text_page {
+  .contentText {
+    font-size: $text-page-content-text-base-font-size;
+
+    @include phone {
+      font-size: $text-page-content-text-phone-base-font-size;
+    }
+
+    h3 {
+      @include typography(
+        $text-page-text-title-typography,
+        (
+          padding-bottom: 2em,
+          font-size: 1.5em
+        )
+      );
+    }
+  }
+}
