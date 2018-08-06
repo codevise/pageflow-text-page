@@ -195,14 +195,7 @@ $inverted-background-color: black;
               outline: 0;
             }
             div {
-              background-color: black;
               width: auto;
-              color: white;
-
-              span {
-                padding: 10px;
-                display: block;
-              }
             }
 
             &:before, &:after {
@@ -215,10 +208,8 @@ $inverted-background-color: black;
               background-position: 0 0;
               background-repeat: no-repeat;
               position: absolute;
-              background-color: transparent;
               top: 18px;
               right: 18px;
-              color: transparent;
               text-indent: -4000px;
               opacity: 0;
               cursor: pointer;
@@ -648,11 +639,9 @@ section.hide_title {
     .inline_image_text {
       position: absolute;
       bottom: 0;
-      background-color: black;
-      color: white;
-      padding: 15px 2%;
       text-align: left;
-      width: 96%;
+      width: 100%;
+      box-sizing: border-box;
     }
   }
   .invert_text & {

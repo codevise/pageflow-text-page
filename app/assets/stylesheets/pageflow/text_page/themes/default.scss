@@ -8,6 +8,16 @@ $text-page-content-text-phone-base-font-size: 1em !default;
 /// paragraph.
 $text-page-text-title-typography: () !default;
 
+/// Inline Image Caption Text box Variables
+
+$text-page-inline-image-caption-background-color: black !default;
+$text-page-inline-image-caption-text-color: white !default;
+
+$text-page-inline-image-caption-inverted-background-color: null !default;
+$text-page-inline-image-caption-inverted-text-color: null !default;
+
+$text-page-inline-image-caption-padding: 7px 10px !default;
+
 @include pageflow-page-type-pictograms("text_page");
 
 .page .text_page {
@@ -28,4 +38,17 @@ $text-page-text-title-typography: () !default;
       );
     }
   }
+
+  .inline_image_text {
+    background-color: $text-page-inline-image-caption-background-color;
+    color: $text-page-inline-image-caption-text-color;
+    padding: $text-page-inline-image-caption-padding;
+  }
+
+  &.invert_text .inline_image_text {
+    background-color: $text-page-inline-image-caption-inverted-background-color;
+    color: $text-page-inline-image-caption-inverted-text-color;
+  }
+
+
 }
