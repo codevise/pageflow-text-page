@@ -557,13 +557,13 @@ $inverted-background-color: black;
 }
 
 .slideshow {
-  .text_page p, h3 span, .inline_image_text span, .fixed_header_area .page_header_wrapper {
+  .text_page p, h3 span, .inline_image_text, .fixed_header_area .page_header_wrapper {
     @include transition(0.5s ease);
   }
-  .hiddenByOverlay .text_page {
+  .hidden_by_overlay .text_page {
     .content {
       opacity: 1;
-      p, h3 span, .inline_image_text span {
+      p, h3 span, .inline_image_text {
         opacity: 0;
       }
     }
