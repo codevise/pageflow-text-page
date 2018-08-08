@@ -459,8 +459,8 @@ $inverted-background-color: black;
     background-color: white;
   }
 
-  .content_and_background {
-    @include transition(1s ease);
+  &.active .content_and_background {
+    @include transition (opacity 1s ease);
   }
 
   &.active.animate-in-forwards .content_and_background {
