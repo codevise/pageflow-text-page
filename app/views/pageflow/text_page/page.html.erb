@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-  <div class="image_fullscreen_view">
+  <div class="image_fullscreen_view" style="<%= configuration['text_page_background_color'].present? ? "background-color: #{configuration['text_page_background_color']}" : '' %>">
     <div class="image_fullscreen_wrapper">
       <div class="image_fullscreen_inner_wrapper">
       <%= content_image_large(configuration['text_image_id'], configuration['image_description']) %>
