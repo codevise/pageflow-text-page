@@ -221,6 +221,9 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
     });
 
     pageElement.find('.content_and_background').toggleClass('invert_text', !!configuration.get('invert_text'));
+    pageElement.find('.image_fullscreen_view').css({
+      backgroundColor: configuration.get('text_page_background_color') || ''
+    });
     pageElement.data('invertIndicator', !configuration.get('invert_text'));
 
     pageElement.find('.content_background_layer').css({
