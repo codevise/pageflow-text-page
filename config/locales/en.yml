@@ -10,6 +10,7 @@ en:
         sticky_inline_image: Sticky image position
         text_coverage: Text coverage
         text_image_id: Inline image
+        text_page_background_color: Background color
         text_titel: Title
         text_title: Text title
         title_position: Title position
@@ -43,10 +44,12 @@ en:
           header: Title area
       inline_help:
         pageflow/page:
+          invert_text: Display white text on dark background.
           prevent_fullscreen: Prevents the image from opening fullscreen on click
           sticky_inline_image: The image scrolls with the text but eventually remains at a vertically centered position.
           text: This is the main contents of the page. This page type is made for long texts. Use a different page type if your main content text is short.
           text_coverage: Determines how much of the title image is visible initially.
           text_image_id: This image is displayed alongside the text.
+          text_page_background_color: Use the 'invert text area color' option to make sure there is sufficient contrast between text and selected background color.
           topasset_dim: Animate the opacity of the title image while scrolling down.
           topasset_parallax: Translate the title image vertically while scrolling down.

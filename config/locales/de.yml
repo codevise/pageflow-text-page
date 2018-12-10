@@ -10,6 +10,7 @@ de:
         sticky_inline_image: Bild an Seite haften
         text_coverage: Textabdeckung
         text_image_id: Bild im Text
+        text_page_background_color: Hintergrundfarbe
         text_titel: Überschrift
         text_title: Texttitel
         title_position: Titelposition
@@ -43,10 +44,12 @@ de:
           header: Titel
       inline_help:
         pageflow/page:
+          invert_text: Weißen Text auf dunklem Grund anzeigen.
           prevent_fullscreen: Verhindert, dass das Fließtextbild bei Klick auf das Bild im Vollbild dargestellt wird.
           sticky_inline_image: Das Bild wird zunächst zusammen mit dem Text gescrollt, bleibt dann aber vertikal zentriert stehen, während der Text weiter scrollt.
           text: Dies ist der Bereich für den Fließtext dieser Seite. Dieser Seitentyp ist für lange Texte optimiert. Bei Kurztexten sollte auf andere Seitentypen zurückgegriffen werden.
           text_coverage: Definiert, wie viel Text (und wie viel vom Titelbild) anfangs sichtbar ist.
           text_image_id: Dieses Bild wird neben dem Text angezeigt.
+          text_page_background_color: Nutze die 'Farben des Textbereichs invertieren' Option, um einen ausreichenden Kontrast des Texts zur gewählten Hintergrundfarbe sicherzustellen.
           topasset_dim: Titlebild abhängig von der Scroll-Position farblich abblenden.
           topasset_parallax: Titelbild abhängig von der Scroll-Position vertikal verschieben.
