@@ -1,8 +1,10 @@
 # CHANGELOG
 
-### Unreleased Changes
+### Version 1.1.0
 
-[Compare changes](https://github.com/codevise/pageflow-text-page/compare/1-0-stable...master)
+2018-12-10
+
+[Compare changes](https://github.com/codevise/pageflow-text-page/compare/1-0-stable...v1.1.0)
 
 - Add support for Pageflow 13
   ([#16](https://github.com/codevise/pageflow-text-page/pull/16))
