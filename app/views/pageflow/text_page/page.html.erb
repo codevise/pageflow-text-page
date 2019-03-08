@@ -1,39 +1,39 @@
-<div class="blackLayer"></div>
+<div class="black_layer"></div>
 <div class="content_and_background text_page <% if configuration['sticky_inline_image'].present? %>sticky_inline_image<% end %> <%= background_asset_present_css_class(configuration) %> <% if configuration['invert_text'].present? %>invert_text<% end %>">
-  <div class="backgroundArea">
-    <%= page_background_asset(configuration) %>
+  <div class="page_background">
+    <%= page_background_asset(page) %>
     <%= shadow_div :opacity => configuration['gradient_opacity'] %>
     <div class="fixed_header_area">
       <div class="page_header_wrapper">
         <div class="page_header">
-          <h2>
-            <span class="tagline"><%= configuration['tagline'] %></span>
-            <span class="title"><%= configuration['title'] %></span>
-            <span class="subtitle"><%= configuration['subtitle'] %></span>
-          </h2>
+          <h3>
+            <span class="page_header-tagline"><%= configuration['tagline'] %></span>
+            <span class="page_header-title"><%= configuration['title'] %></span>
+            <span class="page_header-subtitle"><%= configuration['subtitle'] %></span>
+          </h3>
         </div>
       </div>
     </div>
   </div>
   <div class="content scroller inline_text_position_<%= configuration['inline_text_position'].present? ? configuration['inline_text_position'] : 'left'  %>">
     <div>
-      <div class="contentWrapper">
+      <div class="content_wrapper">
         <div class="page_spacer"></div>
         <div class="contentInnerWrapper">
           <div class="content_background_layer" style="<%= configuration['text_page_background_color'].present? ? "background-color: #{configuration['text_page_background_color']}" : '' %>"></div>
           <div class="page_header">
             <div class="header_background_layer" style="opacity: <%= configuration['gradient_opacity'].to_i / 100.0 %>"></div>
-            <h2>
-              <span class="tagline"><%= configuration['tagline'] %></span>
-              <span class="title"><%= configuration['title'] %></span>
-              <span class="subtitle"><%= configuration['subtitle'] %></span>
-            </h2>
+            <h3>
+              <span class="page_header-tagline"><%= configuration['tagline'] %></span>
+              <span class="page_header-title"><%= configuration['title'] %></span>
+              <span class="page_header-subtitle"><%= configuration['subtitle'] %></span>
+            </h3>
             <%= background_image_tag(configuration['background_image_id'], {"class" => "print_image"}) %>
           </div>
-          <div class="contentText">
-            <h3>
+          <div class="page_text">
+            <h4 class="page_sub_header">
               <span class="text_title"><%= configuration['text_title'] %></span>
-            </h3>
+            </h4>
             <%= link_to(configuration['prevent_fullscreen'].blank? ? fullscreen_image_url(configuration['text_image_id']) : '#',
                         target: ("_blank" if configuration['prevent_fullscreen'].blank?),
                         class: 'inline_image' \

@@ -1,4 +1,4 @@
-pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
+pageflow.react.registerPageTypeWithDefaultBackground('text_page', _.extend({
 
   prepareNextPageTimeout: 0,
 
@@ -6,14 +6,14 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
     this.content = pageElement.find('.scroller');
     this.scrollingDiv = pageElement.find('.scroller > div');
     this.pageSpacerElement = pageElement.find('.page_spacer');
-    this.contentArea = pageElement.find('.contentText');
+    this.contentArea = pageElement.find('.page_text');
     this.backgroundAsset = pageElement.find('.page_background_asset');
     this.inlineImage = pageElement.find('.inline_image');
-    this.inlineImageInitialOffset = pageElement.find('.contentText h3').position().top + pageElement.find('.contentText h3').outerHeight();
+    this.inlineImageInitialOffset = pageElement.find('.page_sub_header').position().top + pageElement.find('.page_sub_header').outerHeight();
     this.fullScreenLayer = pageElement.find('.image_fullscreen_view');
 
     if(configuration.text_position == "left" || configuration.text_position == "right") {
-      this.titleArea = pageElement.find('.backgroundArea .fixed_header_area');
+      this.titleArea = pageElement.find('.page_background .fixed_header_area');
     }
     else {
       this.titleArea = pageElement.find('.contentInnerWrapper .page_header');
@@ -64,7 +64,7 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
       dimHeightTitle = this.pageSpacerElement.height() - earlyDimOffset,
       spacerPageRatio = dimHeight / pageElement.height();
 
-    pageElement.find('.backgroundArea .fixed_header_area').css('opacity', (0.6 * dimHeightTitle + y)/(dimHeightTitle * 0.6)); // Abblenden des Titels, immer*/
+    pageElement.find('.page_background .fixed_header_area').css('opacity', (0.6 * dimHeightTitle + y)/(dimHeightTitle * 0.6)); // Abblenden des Titels, immer*/
 
     if(configuration.topasset_dim) {
       this.backgroundAsset.css('opacity', 1 - (-y / dimHeight)); // Abblenden */
@@ -140,7 +140,7 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
     var y = this.content.scroller('positionY');
 
     this.resizePageSpacer(pageElement, configuration);
-    this.inlineImageInitialOffset = pageElement.find('.contentText h3').position().top;
+    this.inlineImageInitialOffset = pageElement.find('.page_sub_header').position().top;
     this.inlineImage.css('top', this.inlineImageInitialOffset + 'px');
     this.inlineImageInitialTop = this.inlineImage.offset().top - this.scrollingDiv.offset().top;
     this.applyInlineImageEffects(pageElement, configuration);
@@ -154,7 +154,7 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
     var y = this.content.scroller('positionY');
 
     this.resizePageSpacer(pageElement, configuration);
-    this.inlineImageInitialOffset = pageElement.find('.contentText h3').position().top + pageElement.find('.contentText h3').outerHeight();
+    this.inlineImageInitialOffset = pageElement.find('.page_sub_header').position().top + pageElement.find('.page_sub_header').outerHeight();
     this.inlineImage.css('top', this.inlineImageInitialOffset + 'px');
     this.inlineImageInitialTop = this.inlineImage.offset().top - this.scrollingDiv.offset().top;
 
@@ -176,11 +176,8 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
     var y = this.content.scroller('positionY');
 
     pageElement.attr('data-template', 'text_page');
-    pageElement.find('h2 .tagline').text(configuration.get('tagline') || '');
-    pageElement.find('h2 .title').text(configuration.get('title') || '');
-    pageElement.find('h2 .subtitle').text(configuration.get('subtitle') || '');
-    pageElement.find('.contentText .text_title').text(configuration.get('text_title') || '');
-    pageElement.find('.contentText p').html(configuration.get('text') || '');
+    this.updateDefaultPageContent(pageElement, configuration);
+    pageElement.find('.page_text .text_title').text(configuration.get('text_title') || '');
 
     pageElement.find('.content_and_background').toggleClass('no_background_asset',
                                                             configuration.get('background_type') == 'video' ?
@@ -190,7 +187,7 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
     pageElement.find('.content_and_background').toggleClass('sticky_inline_image', !!configuration.get('sticky_inline_image'));
 
     if(configuration.get('text_position') == "left" || configuration.get('text_position') == "right") {
-      this.titleArea = pageElement.find('.backgroundArea .fixed_header_area');
+      this.titleArea = pageElement.find('.page_background .fixed_header_area');
     }
     else {
       this.titleArea = pageElement.find('.contentInnerWrapper .page_header');
@@ -237,7 +234,7 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
 
     this.resizePageSpacer(pageElement, configuration.attributes);
 
-    this.inlineImageInitialOffset = pageElement.find('.contentText h3').position().top + pageElement.find('.contentText h3').outerHeight();
+    this.inlineImageInitialOffset = pageElement.find('.page_sub_header').position().top + pageElement.find('.page_sub_header').outerHeight();
     this.inlineImage.css('top', this.inlineImageInitialOffset + 'px');
     this.inlineImageInitialTop = this.inlineImage.offset().top - this.scrollingDiv.offset().top;
     this.applyInlineImageEffects(pageElement, configuration.attributes);
@@ -263,4 +260,4 @@ pageflow.react.registerPageTypeWithDefaultBackground('text_page', {
       }
     };
   }
-});
+}, pageflow.defaultPageContent));
