@@ -33,8 +33,11 @@ $inverted-background-color: black;
 }
 
 .page .text_page, .js .page .text_page, .js .page:first-child .text_page, .page:first-child .text_page {
+  h3 {
+    font-size: 1em;
+  }
 
-  .backgroundArea {
+  .page_background {
 
     .fixed_header_area {
       position: absolute;
@@ -47,7 +50,7 @@ $inverted-background-color: black;
 
         .page_header {
 
-          h2 {
+          h3 {
             margin: 0;
           }
         }
@@ -85,7 +88,7 @@ $inverted-background-color: black;
           color: white;
           display: none;
 
-          h2 {
+          h3 {
             text-align: center;
             padding: 2em 0;
             margin: 0;
@@ -119,7 +122,7 @@ $inverted-background-color: black;
           }
         }
 
-        .contentText > * {
+        .page_text > * {
           margin: 0 auto;
 
           @include phone {
@@ -127,7 +130,7 @@ $inverted-background-color: black;
           }
         }
 
-        .contentText {
+        .page_text {
           max-width: 500px;
           margin: auto;
           min-height: 300px;
@@ -142,7 +145,7 @@ $inverted-background-color: black;
             padding-right: 0;
           }
 
-          h3 {
+          .page_sub_header {
             width: 100%;
           }
 
@@ -241,7 +244,7 @@ $inverted-background-color: black;
     }
 
     &.inline_text_position_left {
-      > div .contentInnerWrapper .contentText {
+      > div .contentInnerWrapper .page_text {
         margin-left: 8%;
         padding-right: 0;
 
@@ -259,7 +262,7 @@ $inverted-background-color: black;
     }
 
     &.inline_text_position_right {
-      > div .contentInnerWrapper .contentText {
+      > div .contentInnerWrapper .page_text {
         margin-right: 12%;
         padding-right: 0;
 
@@ -280,9 +283,9 @@ $inverted-background-color: black;
 }
 
 .text_position_right.page .text_page {
-  h2 .title,
-  h2 .subtitle,
-  h2 .tagline {
+  h3 .title,
+  h3 .subtitle,
+  h3 .tagline {
     max-width: 500px;
   }
 }
@@ -318,7 +321,7 @@ $inverted-background-color: black;
 }
 
 .page .text_page, .js .page .text_page, .js .page:first-child .text_page, .page:first-child .text_page {
-  &.content_and_background.sticky_inline_image .inline_text_position_center.scroller .contentWrapper {
+  &.content_and_background.sticky_inline_image .inline_text_position_center.scroller .content_wrapper {
     .inline_image {
       position: absolute;
       display: inline-block;
@@ -340,12 +343,12 @@ $inverted-background-color: black;
       }
     }
 
-    .contentText {
+    .page_text {
       @media screen and (min-width: 1101px) {
         max-width: 1000px;
         width: 84%;
 
-        h3, p {
+        .page_sub_header, p {
           margin: 0;
           max-width: 500px;
         }
@@ -365,7 +368,7 @@ $inverted-background-color: black;
     .page_header {
       border-bottom: 1px solid rgb(216, 216, 216);
 
-      h2 {
+      h3 {
         color: black;
       }
     }
@@ -379,7 +382,7 @@ $inverted-background-color: black;
 .page .text_page, .js .page .text_page {
   .scroller {
     > div {
-      .contentText {
+      .page_text {
         a {
           color: black;
         }
@@ -396,7 +399,7 @@ $inverted-background-color: black;
         }
       }
 
-      .contentText {
+      .page_text {
         a {
           color: white;
         }
@@ -427,12 +430,12 @@ $inverted-background-color: black;
     left: 50% !important;
     margin-left: -400px;
   }
-  .contentInnerWrapper .contentText .inline_image {
+  .contentInnerWrapper .page_text .inline_image {
     margin-right: 0 !important;
   }
 
   &.text_position_right {
-    .contentInnerWrapper .contentText .inline_image {
+    .contentInnerWrapper .page_text .inline_image {
       margin-left: 0 !important;
     }
   }
@@ -446,16 +449,16 @@ $inverted-background-color: black;
 
 .slideshow section.fade[data-template="text_page"] {
 
-  .blackLayer {
+  .black_layer {
     display: none;
   }
-  .backgroundArea {
+  .page_background {
     background-color: black;
     -webkit-backface-visibility: hidden;
     opacity: 1;
   }
 
-  &.invert .backgroundArea {
+  &.invert .page_background {
     background-color: white;
   }
 
@@ -484,20 +487,20 @@ $inverted-background-color: black;
     opacity: 1;
   }
 
-  &.active.animate-in-forwards .backgroundArea, &.active.animate-in-backwards .backgroundArea {
+  &.active.animate-in-forwards .page_background, &.active.animate-in-backwards .page_background {
     opacity: 1;
   }
 
-  &.animate-in-forwards .backgroundArea {
+  &.animate-in-forwards .page_background {
     opacity: 0;
   }
-  &.animate-out-forwards .backgroundArea {
+  &.animate-out-forwards .page_background {
     opacity: 1;
   }
-  &.animate-in-backwards .backgroundArea {
+  &.animate-in-backwards .page_background {
     opacity: 0;
   }
-  &.animate-out-backwards .backgroundArea {
+  &.animate-out-backwards .page_background {
     opacity: 1;
   }
 
@@ -548,13 +551,13 @@ $inverted-background-color: black;
 }
 
 .slideshow {
-  .text_page p, h3 span, .inline_image_text, .fixed_header_area .page_header_wrapper {
+  .text_page p, .page_sub_header span, .inline_image_text, .fixed_header_area .page_header_wrapper {
     @include transition(0.5s ease);
   }
   .hidden_by_overlay .text_page {
     .content {
       opacity: 1;
-      p, h3 span, .inline_image_text {
+      p, .page_sub_header span, .inline_image_text {
         opacity: 0;
       }
     }
@@ -585,7 +588,7 @@ section.hide_title {
     opacity: 0;
   }
 
-  .text_page .content .contentWrapper {
+  .text_page .content .content_wrapper {
     @include transform(none);
   }
 }

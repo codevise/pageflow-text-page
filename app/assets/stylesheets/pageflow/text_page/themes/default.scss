@@ -21,14 +21,14 @@ $text-page-inline-image-caption-padding: 7px 10px !default;
 @include pageflow-page-type-pictograms("text_page");
 
 .page .text_page {
-  .contentText {
+  .page_text {
     font-size: $text-page-content-text-base-font-size;
 
     @include phone {
       font-size: $text-page-content-text-phone-base-font-size;
     }
 
-    h3 {
+    .page_sub_header {
       @include typography(
         $text-page-text-title-typography,
         (
