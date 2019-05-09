@@ -21,7 +21,9 @@ pageflow.ConfigurationEditorView.register('text_page', {
 
     this.tab('content', function () {
       this.input('text_title', pageflow.TextInputView);
-      this.input('text', pageflow.TextAreaInputView);
+      this.input('text', pageflow.TextAreaInputView, {
+        fragmentLinkInputView: pageflow.PageLinkInputView
+      });
       this.input('invert_text', pageflow.CheckBoxInputView);
       this.input('text_page_background_color', pageflow.ColorInputView, {
         defaultValue: function(invertText) {
