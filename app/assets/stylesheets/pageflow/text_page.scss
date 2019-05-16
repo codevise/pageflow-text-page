@@ -237,7 +237,7 @@ $inverted-background-color: black;
             }
           }
 
-          div.paragraph {
+          .paragraph {
             width: 100%;
           }
         }
@@ -349,7 +349,8 @@ $inverted-background-color: black;
         max-width: 1000px;
         width: 84%;
 
-        .page_sub_header, p {
+        .page_sub_header,
+        .paragraph {
           margin: 0;
           max-width: 500px;
         }
@@ -552,16 +553,24 @@ $inverted-background-color: black;
 }
 
 .slideshow {
-  .text_page p, .page_sub_header span, .inline_image_text, .fixed_header_area .page_header_wrapper {
+  .text_page .paragraph,
+  .page_sub_header span,
+  .inline_image_text,
+  .fixed_header_area .page_header_wrapper {
     @include transition(0.5s ease);
   }
+
   .hidden_by_overlay .text_page {
     .content {
       opacity: 1;
-      p, .page_sub_header span, .inline_image_text {
+
+      .paragraph,
+      .page_sub_header span,
+      .inline_image_text {
         opacity: 0;
       }
     }
+
     .fixed_header_area .page_header_wrapper {
       opacity: 0;
     }
