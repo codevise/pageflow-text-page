@@ -18,6 +18,9 @@ $text-page-inline-image-caption-inverted-text-color: null !default;
 
 $text-page-inline-image-caption-padding: 7px 10px !default;
 
+/// Typography of the caption that is displayed below the inline image
+$text-page-inline-image-caption-typography: () !default;
+
 @include pageflow-page-type-pictograms("text_page");
 
 .page .text_page {
@@ -43,6 +46,10 @@ $text-page-inline-image-caption-padding: 7px 10px !default;
     background-color: $text-page-inline-image-caption-background-color;
     color: $text-page-inline-image-caption-text-color;
     padding: $text-page-inline-image-caption-padding;
+
+    @include typography(
+      $text-page-inline-image-caption-typography
+    );
   }
 
   &.invert_text .inline_image_text {
