@@ -8,6 +8,8 @@ $text-page-content-text-phone-base-font-size: 1em !default;
 /// paragraph.
 $text-page-text-title-typography: () !default;
 
+$text-page-page-text-wide-desktop-max-width: null !default;
+
 /// Inline Image Caption Text box Variables
 
 $text-page-inline-image-caption-background-color: black !default;
@@ -26,9 +28,15 @@ $text-page-inline-image-caption-typography: () !default;
 .page .text_page {
   .page_text {
     font-size: $text-page-content-text-base-font-size;
+    max-width: 500px;
+
+    @include wide_desktop {
+      max-width: $text-page-page-text-wide-desktop-max-width;
+    }
 
     @include phone {
       font-size: $text-page-content-text-phone-base-font-size;
+      max-width: 84%;
     }
 
     .page_sub_header {
