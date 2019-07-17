@@ -23,6 +23,9 @@ $text-page-inline-image-caption-padding: 7px 10px !default;
 /// Typography of the caption that is displayed below the inline image
 $text-page-inline-image-caption-typography: () !default;
 
+$text-page-anchor-color: $page-anchor-inverted-color !default;
+$text-page-anchor-inverted-color: $page-anchor-color !default;
+
 @include pageflow-page-type-pictograms("text_page");
 
 .page .text_page {
@@ -37,6 +40,10 @@ $text-page-inline-image-caption-typography: () !default;
     @include phone {
       font-size: $text-page-content-text-phone-base-font-size;
       max-width: 84%;
+    }
+
+    a {
+      color: $text-page-anchor-color;
     }
 
     .page_sub_header {
@@ -60,10 +67,14 @@ $text-page-inline-image-caption-typography: () !default;
     );
   }
 
-  &.invert_text .inline_image_text {
-    background-color: $text-page-inline-image-caption-inverted-background-color;
-    color: $text-page-inline-image-caption-inverted-text-color;
+  &.invert_text {
+    .inline_image_text {
+      background-color: $text-page-inline-image-caption-inverted-background-color;
+      color: $text-page-inline-image-caption-inverted-text-color;
+    }
+
+    .page_text a {
+      color: $text-page-anchor-inverted-color;
+    }
   }
-
-
 }
