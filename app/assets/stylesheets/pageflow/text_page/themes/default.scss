@@ -29,13 +29,17 @@ $text-page-anchor-inverted-color: $page-anchor-color !default;
 @include pageflow-page-type-pictograms("text_page");
 
 .page .text_page {
+  .inline_text_position_left {
+    .page_text {
+      @include wide_desktop {
+        max-width: $text-page-page-text-wide-desktop-max-width;
+      }
+    }
+  }
+
   .page_text {
     font-size: $text-page-content-text-base-font-size;
     max-width: 500px;
-
-    @include wide_desktop {
-      max-width: $text-page-page-text-wide-desktop-max-width;
-    }
 
     @include phone {
       font-size: $text-page-content-text-phone-base-font-size;
