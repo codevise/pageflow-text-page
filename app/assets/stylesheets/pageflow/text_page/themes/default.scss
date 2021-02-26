@@ -4,6 +4,12 @@ $text-page-content-text-base-font-size: 0.8em !default;
 /// Used to undo scaling of text title and content text on phone
 $text-page-content-text-phone-base-font-size: 1em !default;
 
+$text-page-content-text-color: #000 !default;
+$text-page-content-text-inverted-color: #fff !default;
+
+$text-page-text-title-color: null !default;
+$text-page-text-title-inverted-color: null !default;
+
 /// Typography of the header displayed above the content text
 /// paragraph.
 $text-page-text-title-typography: () !default;
@@ -40,6 +46,7 @@ $text-page-anchor-inverted-color: $page-anchor-color !default;
   .page_text {
     font-size: $text-page-content-text-base-font-size;
     max-width: 500px;
+    color: $text-page-content-text-color;
 
     @include phone {
       font-size: $text-page-content-text-phone-base-font-size;
@@ -51,6 +58,8 @@ $text-page-anchor-inverted-color: $page-anchor-color !default;
     }
 
     .page_sub_header {
+      color: $text-page-text-title-color;
+
       @include typography(
         $text-page-text-title-typography,
         (
@@ -77,8 +86,16 @@ $text-page-anchor-inverted-color: $page-anchor-color !default;
       color: $text-page-inline-image-caption-inverted-text-color;
     }
 
-    .page_text a {
-      color: $text-page-anchor-inverted-color;
+    .page_text {
+      color: $text-page-content-text-inverted-color;
+
+      a {
+        color: $text-page-anchor-inverted-color;
+      }
+
+      .page_sub_header {
+        color: $text-page-text-title-inverted-color;
+      }
     }
   }
 }

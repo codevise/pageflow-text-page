@@ -67,7 +67,6 @@ $inverted-background-color: black;
 
       .contentInnerWrapper {
         position: relative;
-        color: black;
 
         .content_background_layer {
           height: 100%;
@@ -380,8 +379,6 @@ $inverted-background-color: black;
   &.invert_text .scroller {
     > div {
       .contentInnerWrapper {
-        color: white;
-
         .content_background_layer {
           background-color: black;
         }
