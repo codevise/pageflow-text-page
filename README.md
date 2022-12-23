@@ -1,7 +1,7 @@
 # Pageflow Text Page
 
 [![Gem Version](https://badge.fury.io/rb/pageflow-text-page.svg)](http://badge.fury.io/rb/pageflow-text-page)
-[![Build Status](https://travis-ci.org/codevise/pageflow-text-page.svg?branch=master)](https://travis-ci.org/codevise/pageflow-text-page)
+[![Build Status](https://github.com/codevise/pageflow-text-page/workflows/tests/badge.svg)](https://github.com/codevise/pageflow-text-page/actions)
 
 Page type to display large texts on a page.
 
