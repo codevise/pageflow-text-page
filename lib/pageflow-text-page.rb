@@ -1,4 +1,5 @@
 require 'pageflow/text_page/engine'
+require 'pageflow/text_page/version'
 
 module Pageflow
   module TextPage
