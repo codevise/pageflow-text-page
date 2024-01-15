@@ -1,10 +1,14 @@
 # CHANGELOG
 
-### Unreleased Changes
+### Version 1.8.0
 
-[Compare changes](https://github.com/codevise/pageflow-text-page/compare/1-7-stable...master)
+2024-01-15
 
-None so far.
+[Compare changes](https://github.com/codevise/pageflow-text-page/compare/1-7-stable...v1.8.0)
+
+- Support Pageflow 17
+  ([#35](https://github.com/codevise/pageflow-text-page/pull/35),
+   [#34](https://github.com/codevise/pageflow-text-page/pull/34))
 
 See
 [1-7-stable branch](https://github.com/codevise/pageflow-text-page/blob/1-7-stable/CHANGELOG.md)
